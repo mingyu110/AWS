@@ -80,9 +80,9 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
-        "JobName": "job2"
+        "JobName": "aws_glue_job2"
       },
-      "Next": "aws_glue_job2"
+      "Next": "crawler2_start"
     },
     "crawler2_start": {
       "Type": "Task",
