@@ -2,7 +2,7 @@
   "Comment": "A description of my state machine",
   "StartAt": "aws_glue_job1_start",
   "States": {
-    "job1_start": {
+    "aws_glue_job1_start": {
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
@@ -76,15 +76,15 @@
       "Seconds": 3,
       "Next": "get_crawler1_state"
     },
-    "job2_start": {
+    "aws_glue_job2_start": {
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
         "JobName": "job2"
       },
-      "Next": "aws_glue_job2_start"
+      "Next": "aws_glue_job2"
     },
-    "aws_glue_job2_start": {
+    "crawler2_start": {
       "Type": "Task",
       "Resource": "arn:aws:states:::lambda:invoke",
       "OutputPath": "$.Payload",
