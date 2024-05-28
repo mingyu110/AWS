@@ -1,0 +1,112 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "aws_glue_job1_start",
+  "States": {
+    "job1_start": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "aws_glue_job1"
+      },
+      "Next": "crawler1_start"
+    },
+    "crawler1_start": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:<account_number>:function:startcrawlerfunction:$LATEST",
+        "Payload": {
+          "crawlername": "crawler1"
+        }
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException"
+          ],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 6,
+          "BackoffRate": 2
+        }
+      ],
+      "Next": "get_crawler1_state"
+    },
+    "get_crawler1_state": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:<account_number>:function:getcrawlerfunction:$LATEST",
+        "Payload": {
+          "crawlername": "crawler1"
+        }
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException"
+          ],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 6,
+          "BackoffRate": 2
+        }
+      ],
+      "Next": "Choice"
+    },
+    "Choice": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Not": {
+            "Variable": "$.state",
+            "StringEquals": "READY"
+          },
+          "Next": "Wait"
+        }
+      ],
+      "Default": "aws_glue_job2_start"
+    },
+    "Wait": {
+      "Type": "Wait",
+      "Seconds": 3,
+      "Next": "get_crawler1_state"
+    },
+    "job2_start": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "job2"
+      },
+      "Next": "aws_glue_job2_start"
+    },
+    "aws_glue_job2_start": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "FunctionName": "arn:aws:lambda:eu-west-1:<account_number>:function:startcrawlerfunction:$LATEST",
+        "Payload": {
+          "crawlername": "crawler2"
+        }
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException"
+          ],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 6,
+          "BackoffRate": 2
+        }
+      ],
+      "End": true
+    }
+  }
+}
