@@ -7,4 +7,4 @@ The architecture of the pipeline is illustrated below:
 ## Background
 
 - The mastery of the technical stack depicted in the figure below is imperative for aspiring Data Engineers aiming to excel in their field：
-  
+  ![Data Engineer Stack](images/Stack.png )
