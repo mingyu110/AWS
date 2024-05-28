@@ -15,4 +15,4 @@ The architecture of the pipeline is illustrated below:
 
 <img width="616" alt="截屏2024-05-28 12 27 27" src="https://github.com/mingyu110/Cloud-Architect-Practice/assets/48540798/b836b224-4baa-4290-938a-fdd9f368f957">
 
-- Hence, this guide provides reference examples for the implementation of an end-to-end ETL Pipeline using AWS Stepfunctions in conjunction with AWS Glue.
+- Hence, this guide provides reference example for the implementation of an end-to-end ETL Pipeline using AWS Stepfunctions in conjunction with AWS Glue.
