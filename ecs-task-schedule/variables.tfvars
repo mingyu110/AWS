@@ -6,5 +6,5 @@
 aws_region = "us-west-2" # Replace with your desired region
 s3_bucket_lambda_functions_storage_bucket = "your-s3-bucket-name"
 iam_role_ecs_task_scheduler_lambda_exec_role_arn = "your-iam-role-arn"
-function_name = "ecs-task-scheduler"
+function_name = "app.py"
 iam_role_name = "ecs_task_scheduler_lambda_exec_role.name"
