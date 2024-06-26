@@ -8,7 +8,7 @@
     "paths": {
         "/GetProductsInventory": {
             "get": {
-				"summary": "Gets products inventory",
+		"summary": "Gets products inventory",
                 "description": "Gets all product inventory",
                 "operationId": "getProductsInventory",
                 "parameters": [],
@@ -45,7 +45,7 @@
            },
           "/RestockProduct": {
              "post": {
-				        "summary": "Creates a Product Restock Order",
+		"summary": "Creates a Product Restock Order",
                 "description": "Creates a Product Restock Order",
                 "operationId": "RestockProduct",
                 "requestBody": {
