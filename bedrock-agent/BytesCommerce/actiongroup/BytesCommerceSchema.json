@@ -1,6 +1,6 @@
 {
     "openapi": "3.0.0",
-	 "info": {
+	"info": {
         "title": "Bytes Commerce",
         "version": "1.0.0",
         "description": "APIs for managing product inventory"
