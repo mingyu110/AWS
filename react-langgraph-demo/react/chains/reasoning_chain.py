@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# reference:https://smith.langchain.com/hub/hwchase17/react
 react_prompt: PromptTemplate = hub.pull("hwchase17/react")
 
 
