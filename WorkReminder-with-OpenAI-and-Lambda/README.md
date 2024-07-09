@@ -85,4 +85,23 @@ Set up two cron jobs using EventBridge. The first job, scheduled to run at <mark
 
 使用AWS Lambda、OpenAI API创建的用于Telegram的工作任务提醒机器人
 
+### 前置条件
+- AWS账户
+- Telegram bot token(可以在Telegram上使用@BotFather创建
+- 用于访问ChatGPT的OpenAI API密钥
+- 具备Python和AWS Lambda的基础知识
+
+### 架构
+
+
+![TaskReminder](https://github.com/mingyu110/Cloud-and-GenAI/assets/48540798/b01ce495-8d2e-48d7-ab29-9122121bd572)
+
+### 步骤1: 设置Telegram Bot
+1. 创建Telegram Bot:
+   - 在Telegram中搜索@BotFather并打开对话框
+   - 使用命令`/newbot`创建一个全新的机器人
+   - 按照提示为其命名和获取令牌，请务必妥善保存该令牌以备将来使用
+### 步骤2: 设置AWS服务
+所有所提及的代码均可在此处获取：[WorkReminder](https://github.com/mingyu110/Cloud-and-GenAI/WorkReminder-with-OpenAI-and-Lambda)
+
 </div>
