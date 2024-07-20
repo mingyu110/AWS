@@ -1,1 +1,1 @@
-The Cloud and Generative AI in practice
+The architecture of Cloud and AI on the AWS platform.
