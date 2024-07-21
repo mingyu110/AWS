@@ -11,7 +11,7 @@ ___
 ___
 
 ### 方案架构
-- 方案架构图如下
+
 ![XML File Processing with Gule and Athena](assets/Deployment1.jpg)
 ___
 
