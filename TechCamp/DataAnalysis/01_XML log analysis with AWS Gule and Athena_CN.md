@@ -27,7 +27,7 @@ ___
   - 使用**AWS Glue**创建一个**Glue crawler** ，从XML文件中提取**metadata**，并在**AWS Glue**数据目录中执行<u>**crawler**</u>以生成一张<u>**data table**</u>,[参考文档](https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html)
 ![AWS Glue Catalog](assets/img_1.png)
 ---
-  - 由于**AWS Athena**不支持**XML format**，因此需要利用**AWS Glue job**将**XML format**转换为**Parquet format**;这项操作既可以在<u>**AWS Glue控制台**</u>完成，也可以通过<u>**脚本**</u>完成
+  - 由于**AWS Athena**不支持**XML format**，因此需要利用**AWS Glue job**将**XML format**转换为**Parquet format**;这项操作既可以在<u>**AWS Glue控制台图形化界面**</u>完成，也可以通过<u>**脚本**</u>完成
     - **脚本**方式：
       - 在**AWS Glue**选择**ETL Jobs -> Visual ETL -> Script editor**
       - 编写<u>**[代码](src/job.py)**</u>并且运行**job**
