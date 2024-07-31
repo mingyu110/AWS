@@ -4,7 +4,8 @@
 
 ## English
 
-Create a WorkReminder bot using AWS Lambda, Telegram, and the OpenAI API.
+- Create a WorkReminder bot using AWS Lambda, Telegram, and the OpenAI API.
+- The system is constructed utilizing the `API proxy` pattern.
 
 ### Prerequisites
 - An AWS account.
@@ -83,7 +84,8 @@ Set up two cron jobs using EventBridge. The first job, scheduled to run at <mark
 
 ## 中文
 
-使用AWS Lambda、OpenAI API创建的用于Telegram的工作任务提醒机器人
+- 使用AWS Lambda、OpenAI API创建的用于Telegram的工作任务提醒机器人。
+- 该系统基于`API Proxy`模式进行构建。
 
 ### 前置条件
 - AWS账户
