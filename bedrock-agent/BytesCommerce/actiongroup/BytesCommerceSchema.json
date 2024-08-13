@@ -1,6 +1,6 @@
 {
     "openapi": "3.0.0",
-	"info": {
+	 "info": {
         "title": "Bytes Commerce",
         "version": "1.0.0",
         "description": "APIs for managing product inventory"
@@ -8,7 +8,7 @@
     "paths": {
         "/GetProductsInventory": {
             "get": {
-		"summary": "Gets products inventory",
+				"summary": "Gets products inventory",
                 "description": "Gets all product inventory",
                 "operationId": "getProductsInventory",
                 "parameters": [],
@@ -45,10 +45,10 @@
            },
           "/RestockProduct": {
              "post": {
-		"summary": "Creates a Product Restock Order",
-                "description": "Creates a Product Restock Order",
-                "operationId": "RestockProduct",
-                "requestBody": {
+                 "summary": "Creates a Product Restock Order",
+                 "description": "Creates a Product Restock Order",
+                 "operationId": "RestockProduct",
+                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
