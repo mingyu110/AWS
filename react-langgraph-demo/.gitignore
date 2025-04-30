@@ -1,0 +1,6 @@
+.env
+myenv/
+venv/
+.idea/
+External Libraries/
+Scratches and Consoles/
