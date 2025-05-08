@@ -1,0 +1,11 @@
+AWS-Cost-Optimization
+CLIP with Opensearch
+Data ETL Pipeline
+LangGraph Retrieval Agent
+MLOps_CICD
+TechCamp
+WorkReminder-with-OpenAI-and-Lambda
+bedrock-agent
+ecs-task-schedule
+eks-cost-optimization
+react-langgraph-demo

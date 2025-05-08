@@ -1,58 +1,17 @@
-## 快速开始
+# AWS 项目集合
 
-### 1. 部署基础设施
+本仓库包含多个与 AWS 相关的子项目，涵盖云资源管理、自动化、数据处理、MLOps 等场景。
 
-```bash
-cd terraform
-terraform init
-terraform plan
-terraform apply
-```
+## 项目列表
 
-### 2. 部署 Lambda 函数
-
-获取 Lambda 执行角色 ARN:
-
-```bash
-terraform output lambda_role_arn
-```
-
-使用 **AWS CLI** 部署 Lambda 函数:
-
-```bash
-cd ../lambda/scale_handler
-pip install -r requirements.txt -t .
-zip -r function.zip .
-aws lambda create-function \
-  --function-name eks-scale-handler \
-  --runtime python3.9 \
-  --handler scale_handler.lambda_handler \
-  --role <LAMBDA_ROLE_ARN> \
-  --zip-file fileb://function.zip \
-  --environment "Variables={EKS_CLUSTER_NAME=eks-cost-optimization,NODEGROUP_NAME=default,MIN_SIZE=1}"
-```
-
-### 3. 更新 EventBridge 目标
-
-使用**AWS CLI**获取 Lambda 函数 ARN:
-
-```bash
-aws lambda get-function --function-name eks-scale-handler --query 'Configuration.FunctionArn' --output text
-```
-
-更新 Terraform 配置中的 Lambda ARN 并重新应用:
-
-```bash
-cd ../../terraform
-# 编辑 eventbridge.tf 文件，更新 LAMBDA_ARN_PLACEHOLDER
-terraform apply
-```
-
-### 4. 功能特性
-
-- EKS 集群自动部署
-- Karpenter 动态节点管理
-- Spot 实例自动调度
-- 定时自动扩缩容
-- Spot 实例中断监控
-
+- **AWS-Cost-Optimization**：AWS 云资源成本及合规自动化优化方案。
+- **CLIP with Opensearch**：基于 CLIP 和 Opensearch 的多模态检索示例。
+- **Data ETL Pipeline**：数据提取、转换、加载的自动化流水线。
+- **LangGraph Retrieval Agent**：基于 LangGraph 的智能检索代理。
+- **MLOps_CICD**：MLOps 与 Terraform 的多环境 CI/CD 实践。
+- **TechCamp**：技术训练营相关的 AWS 实践项目。
+- **WorkReminder-with-OpenAI-and-Lambda**：基于 OpenAI 和 Lambda 的工作提醒系统。
+- **bedrock-agent**：AWS Bedrock 智能体相关示例。
+- **ecs-task-schedule**：ECS 任务定时调度与自动化。
+- **eks-cost-optimization**：EKS 节点成本与架构优化方案及相关 IaC 脚本。
+- **react-langgraph-demo**：React + LangGraph 的前端智能体演示。 
